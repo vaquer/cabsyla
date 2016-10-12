@@ -9,10 +9,7 @@ class Citizen(AbstractUser):
     country = models.CharField(default='Mexico', max_length=50)
     city = models.CharField(max_length=3, choices=settings.STATES_MEXICO, default='9')
     age = models.PositiveIntegerField(verbose_name='Edad', blank=True, null=True)
-    slug = models.SlugField(max_length=150, blank=True, null=True)
-    avatar = models.URLField(max_length=400, blank=True, null=True)
 
-    def save(self):
-        if not self.id:
-            self.is_staff = False
-        super(Citizen, self).save()
+
+    class Meta:
+        verbose_name = 'Citizen'

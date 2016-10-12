@@ -1,3 +1,5 @@
+{% load socialaccount %}
+{% load account %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +44,13 @@
             <li><a href="#contact">Contacto</a></li>
           </ul>
           <div class="navbar-form navbar-right">
-            <a class="btn btn-success">Ingresar</a>
+          {% if request.user.is_authenticated %}
+            <img style="height: 30px; float: left;" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="float">
+            {% user_display user as user_display %}
+            <p style="float: left;">{{user_display}}</p>
+          {% else %}
+              <a href="{% provider_login_url "facebook" method="oauth2" %}" class="btn btn-success">Ingresar</a>
+          {% endif %}
           </div>
         </div><!--/.nav-collapse -->
       </div>
@@ -55,7 +63,7 @@
     </div>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
