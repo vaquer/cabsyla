@@ -35,7 +35,7 @@ DATABASES = {
         'USER': 'cabsy',
         'PASSWORD': 'mysecurepass',
         'HOST': '0.0.0.0',
-        'PORT': '5435',
+        'PORT': '5436',
     }
 }
 
@@ -111,16 +111,17 @@ MEDIA_URL = '/media/'
 
 SITE_ID = 1
 
+# PROJECT CONSTANTS
 STATES_MEXICO = (
-    ('1 ', 'Aguascalientes'),
-    ('2 ','Baja California'),
-    ('3 ', 'Baja California Sur'),
-    ('4 ', 'Campeche'),
-    ('5 ', 'Coahuila de Zaragoza'),
-    ('6 ', 'Colima'),
-    ('7 ', 'Chiapas'),
-    ('8 ', 'Chihuahua'),
-    ('9 ', 'Distrito Federal'),
+    ('1', 'Aguascalientes'),
+    ('2','Baja California'),
+    ('3', 'Baja California Sur'),
+    ('4', 'Campeche'),
+    ('5', 'Coahuila de Zaragoza'),
+    ('6', 'Colima'),
+    ('7', 'Chiapas'),
+    ('8', 'Chihuahua'),
+    ('9', 'Distrito Federal'),
     ('10', 'Durango'),
     ('11', 'Guanajuato'),
     ('12', 'Guerrero'),
@@ -144,4 +145,28 @@ STATES_MEXICO = (
     ('30', 'Veracruz de Ignacio de la Llave'),
     ('31', 'Yucatán'),
     ('32', 'Zacatecas'),
+)
+
+COMPLIMENTS_SUBJECT = (
+    ('1', 'Higiene Personal'),
+    ('2', 'Estado la unidad'),
+    ('3', 'Conduccion'),
+    ('4', 'Trato con el cliente'),
+    ('5', 'Ruta'),
+)
+
+COMPLAINTS_SUBJECT = (
+    ('1', 'Higiene Personal'),
+    ('2', 'Estado la unidad'),
+    ('3', 'Conduccion'),
+    ('4', 'Trato con el cliente'),
+    ('5', 'Ruta'),
+    ('6', 'Actitud Sospechosa'),
+)
+
+DRIVER_STATUS = (
+    ('A', 'Activo'),
+    ('S', 'Suspendido'),
+    ('R', 'Re-Incorporado'),
+    ('P', 'Pendiente'),
 )
